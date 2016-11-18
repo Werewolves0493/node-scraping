@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include common/head %>
+</head>
+<body class="container">
+<header>
+    <% include common/header %>
+</header>
+
+<main>
+    <div align="center">
+        <table width="80%" border="1">
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+            </tr>
+            <% products.forEach(function(product){ %>
+            <tr>
+                <th>
+                    <a href="/product?md5=<%= product.md5 %>" target="_blank">
+                        <%= product.data.productName%>
+                    </a>
+
+                </th>
+                <th width="100px"><%= product.data.productPrice %></th>
+            </tr>
+            <% }); %>
+        </table>
+    </div>
+</main>
+
+<footer><% include common/footer %></footer>
+</body>
+</html>
